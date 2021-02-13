@@ -1,8 +1,8 @@
 //Assigment Code
-var specialCharacters =["!","@","#"]
-var numericCharacters =["1","2","3"]
-var lowerCaseCharacters =["a","b","c"]
-var upperCaseCharacters =["A","B","C"]
+var specialCharacters =["!","@","#","$","%","^","&","*"]
+var numericCharacters =["1","2","3","4","5","6","7","8","9"]
+var lowerCaseCharacters =["a","b","c","d","e","f","g","h","i","j","k","l","m","o","p","q","r","s","t","u","v","w","x","y","z"]
+var upperCaseCharacters =["A","B","C","D","E","F","G","H","I","J","K","L","M","O","P","Q","R","S","T","U","V","W","X","Y","Z"]
 var generateBtn = document.querySelector("#generate");
 
 
@@ -28,6 +28,7 @@ var isspecialCharacters= confirm("Please Click Ok To Use The Special Charactors"
 var isnumericCharacters= confirm("Please Click Ok To Use The Numeric Charactors")
 var islowerCharacters= confirm("Please Click Ok To Use The LowerCase Charactors")
 var isupperCharacters= confirm("Please Click Ok To Use The UpperCase Charactors")
+
 
 if (isspecialCharacters===false && isnumericCharacters===false && islowerCharacters===false && isupperCharacters===false){
     alert("You Must Select At Least One Of The Charactors To Create A Password")
@@ -58,9 +59,39 @@ if (Choices.isspecialCharacters){
     Possible=Possible.concat(specialCharacters)
     Guarentee.push(random(specialCharacters))
 }
+return Guarentee.join("")
 } 
-
-
+function generatePassword(){
+    var Choices = PasswordOptions()
+    var Possible = []
+    var Guarentee = []
+    if (Choices.isnumericCharacters){
+        Possible=Possible.concat(numericCharacters)
+        Guarentee.push(random(numericCharacters))
+    }
+    return Guarentee.join("")
+    } 
+    function generatePassword(){
+        var Choices = PasswordOptions()
+        var Possible = []
+        var Guarentee = []
+        if (Choices.islowerCharacters){
+            Possible=Possible.concat(lowerCaseCharacters)
+            Guarentee.push(random(lowerCaseCharacters))
+        }
+        return Guarentee.join("")
+        } 
+        function generatePassword(){
+            var Choices = PasswordOptions()
+            var Possible = []
+            var Guarentee = []
+            if (Choices.isupperCharacters){
+                Possible=Possible.concat(upperCaseCharacters)
+                Guarentee.push(random(upperCaseCharacters))
+            }
+            return Guarentee.join("")
+            } 
+                    
 
 function greaterNumber() {
 
