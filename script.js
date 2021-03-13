@@ -3,25 +3,25 @@ var specialCharacters =["!","@","#","$","%","^","&","*"]
 var numericCharacters =["1","2","3","4","5","6","7","8","9"]
 var lowerCaseCharacters =["a","b","c","d","e","f","g","h","i","j","k","l","m","o","p","q","r","s","t","u","v","w","x","y","z"]
 var upperCaseCharacters =["A","B","C","D","E","F","G","H","I","J","K","L","M","O","P","Q","R","S","T","U","V","W","X","Y","Z"]
-var generateBtn = document.querySelector("#generate");
+
 
 
 //Password Code
 function PasswordOptions() {
-    while (true) {
-var length = parseInt(prompt("How Many Characters Would You Like Your Password To Be? (Password Must Be 8-12 Characters Long"))   
+
+var length = parseInt(prompt("How Many Characters Would You Like Your Password To Be? (Password Must Be 8-128 Characters Long"))   
 
 if (isNaN(length)===true){
     alert("Password Length Must Be Numeric")
-    continue
+    return
 }
 if (length < 8){
     alert("Password Length Must Be At Least 8 Characters")
-    continue
+    return
 }
 if (length > 128){
     alert("Password Length May Not Be More Than 128 Characters Long")
-    continue
+    return
 }
 
 var isspecialCharacters= confirm("Please Click Ok To Use The Special Charactors")
@@ -32,7 +32,7 @@ var isupperCharacters= confirm("Please Click Ok To Use The UpperCase Charactors"
 
 if (isspecialCharacters===false && isnumericCharacters===false && islowerCharacters===false && isupperCharacters===false){
     alert("You Must Select At Least One Of The Charactors To Create A Password")
-    continue
+   return
 }
 var passwordChoices= {
     length:length,
@@ -41,62 +41,58 @@ var passwordChoices= {
     islowerCharacters:islowerCharacters,
     isupperCharacters:isupperCharacters,
 }
-return passwordChoices }
+ 
+ return passwordChoices
 }
 
 function random(arr){
 
-    var randomindex=Math.floor(Math.random()* arr.length)
-    var randomelement=arr[randomindex]
-   return randomelement 
+    var randomindex = Math.floor(Math.random() * arr.length)
+    var randomelement = arr[randomindex]
+return randomelement 
 }
 
 function generatePassword(){
 var Choices = PasswordOptions()
+var result = [] 
 var Possible = []
 var Guarentee = []
-if (Choices.isspecialCharacters){
-    Possible=Possible.concat(specialCharacters)
-    Guarentee.push(random(specialCharacters))
-}
-return Guarentee.join("")
-} 
-function generatePassword(){
-    var Choices = PasswordOptions()
-    var Possible = []
-    var Guarentee = []
+    if (Choices.isspecialCharacters){
+        Possible = Possible.concat(specialCharacters)
+        Guarentee.push(random(specialCharacters))
+    }
+
     if (Choices.isnumericCharacters){
-        Possible=Possible.concat(numericCharacters)
+        Possible = Possible.concat(numericCharacters)
         Guarentee.push(random(numericCharacters))
     }
-    return Guarentee.join("")
-    } 
-    function generatePassword(){
-        var Choices = PasswordOptions()
-        var Possible = []
-        var Guarentee = []
+   
+    
         if (Choices.islowerCharacters){
-            Possible=Possible.concat(lowerCaseCharacters)
+            Possible = Possible.concat(lowerCaseCharacters)
             Guarentee.push(random(lowerCaseCharacters))
         }
-        return Guarentee.join("")
-        } 
-        function generatePassword(){
-            var Choices = PasswordOptions()
-            var Possible = []
-            var Guarentee = []
+       
+        
             if (Choices.isupperCharacters){
-                Possible=Possible.concat(upperCaseCharacters)
+                Possible = Possible.concat(upperCaseCharacters)
                 Guarentee.push(random(upperCaseCharacters))
             }
-            return Guarentee.join("")
-            } 
-                    
+        
+            
+        for (var i = 0; i < Choices.length; i++ ){
+            var Possible = random(Possible)
+            result.push(Possible)
+        }
+        for (var i = 0; i < Guarentee.length; i++ ) {
+            result[i] = Guarentee[i] 
+        }
+        return result.join("")
 
-function greaterNumber() {
 
+}                 
 
-}
+var generateBtn = document.querySelector("#generate");
 //Write password to the #password input
 function writePassword() {
     var password = generatePassword();
