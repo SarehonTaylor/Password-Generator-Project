@@ -49,7 +49,7 @@ function random(arr){
 
     var randomindex = Math.floor(Math.random() * arr.length)
     var randomelement = arr[randomindex]
-return randomelement 
+    return randomelement 
 }
 
 function generatePassword(){
@@ -68,26 +68,28 @@ var Guarentee = []
     }
    
     
-        if (Choices.islowerCharacters){
-            Possible = Possible.concat(lowerCaseCharacters)
-            Guarentee.push(random(lowerCaseCharacters))
-        }
+    if (Choices.islowerCharacters){
+        Possible = Possible.concat(lowerCaseCharacters)
+        Guarentee.push(random(lowerCaseCharacters))
+    }
        
         
-            if (Choices.isupperCharacters){
-                Possible = Possible.concat(upperCaseCharacters)
-                Guarentee.push(random(upperCaseCharacters))
-            }
+    if (Choices.isupperCharacters){
+        Possible = Possible.concat(upperCaseCharacters)
+        Guarentee.push(random(upperCaseCharacters))
+    }
         
             
-        for (var i = 0; i < Choices.length; i++ ){
-            var Possible = random(Possible)
-            result.push(Possible)
-        }
-        for (var i = 0; i < Guarentee.length; i++ ) {
-            result[i] = Guarentee[i] 
-        }
-        return result.join("")
+    for (var i = 0; i < Choices.length; i++ ){
+        var pos = random(Possible)
+        result.push(pos)
+    }
+
+    for (var i = 0; i < Guarentee.length; i++ ) {
+        result[i] = Guarentee[i] 
+    }
+    
+    return result.join("")
 
 
 }                 
