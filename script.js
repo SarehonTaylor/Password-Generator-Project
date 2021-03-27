@@ -54,6 +54,7 @@ function random(arr){
 
 function generatePassword(){
 var Choices = PasswordOptions()
+if (!Choices) return
 var result = [] 
 var Possible = []
 var Guarentee = []
@@ -101,7 +102,7 @@ function writePassword() {
     var passwordText = document.querySelector("#password");
 
 
-    passwordText.value = password;
+    if (password) passwordText.value = password;
 
 }
 
