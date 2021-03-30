@@ -16,6 +16,6 @@ This will send the user a series of prompts and confirms
 After user data is collected, a random password will be generated using Javascript
 
 ![Password Generator Charactor Selection Screen](https://user-images.githubusercontent.com/74032335/112921869-83e41d00-90d9-11eb-87fb-873261397a0d.PNG)
-![Password Generator](https://user-images.githubusercontent.com/74032335/112921904-91010c00-90d9-11eb-855f-aec606e0f724.gif)
+![Untitled_ Mar 29, 2021 10_01 PM](https://user-images.githubusercontent.com/74032335/112922648-d5d97280-90da-11eb-9f01-095340079a0d.gif)
 
-Link to deployed application: https://sarehontaylor.github.io/Password-Generator-Project-Week3/
+Link to deployed application: https://sarehontaylor.github.io/Password-Generator-Project/
