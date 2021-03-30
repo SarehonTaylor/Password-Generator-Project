@@ -17,3 +17,5 @@ After user data is collected, a random password will be generated using Javascri
 
 ![Password Generator Charactor Selection Screen](https://user-images.githubusercontent.com/74032335/112921869-83e41d00-90d9-11eb-87fb-873261397a0d.PNG)
 ![Password Generator](https://user-images.githubusercontent.com/74032335/112921904-91010c00-90d9-11eb-855f-aec606e0f724.gif)
+
+Link to deployed application: https://sarehontaylor.github.io/Password-Generator-Project-Week3/
